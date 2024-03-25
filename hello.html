@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Page</title>
+<style>
+/* CSS styles */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+button.toggle-button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button.toggle-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.toggle-button:hover {
+    background-color: #45a049;
+}
+
+</style>
+
+<script>
+function toggleForms() {
+    const form1 = document.getElementById('form1');
+    const form2 = document.getElementById('form2');
+    form1.style.display = form1.style.display === 'none' ? 'block': 'none';
+    form2.style.display = form2.style.display === 'none' ? 'block': 'none';
+}
+</script>
+
+</head>
+<body>
+
+<div class="form-container" id="form1">
+    <form method="GET" action="/sig">
+        <h2>Sign up</h2>
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Register">
+    </form>
+    <br>
+    <button class="toggle-button" onclick="toggleForms()">Login</button>
+</div>
+
+<div class="form-container" id="form2" style="display: none;">
+    <form method="GET" action="/log">
+        <h2>Log In</h2>
+        <input type="email" name="email"I placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <button class="toggle-button" onclick="toggleForms()">Signup</button>
+</div>
+
+</body>
+</html>
